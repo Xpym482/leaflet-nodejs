@@ -22,7 +22,6 @@ block content
         });
 
         function addLayer(layer, name) {
-            console.log(layer);
             var leaf_layer;
             if (layer.type == "MultiPoint") {
                 leaf_layer = L.geoJson(layer, { pointToLayer: function (feature, latlng) {return L.circleMarker(latlng, layer.style); }})
