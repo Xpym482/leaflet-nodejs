@@ -1,5 +1,5 @@
-#Guide
-##Firebase
+# Guide
+## Firebase
 ```
 1) go to firebase console
 2) create new project
@@ -8,7 +8,7 @@
 5) in the setting -> service accounts -> generate private key
 6) copy this file to leaflet_map folder
 ```
-##NodeJS
+## NodeJS
 ```
 1) git clone
 2) cd leaflet_map
