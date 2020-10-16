@@ -1,5 +1,16 @@
 extends layout.pug
 block content
+    form(method='POST' action='/addmarker')
+        input(
+            type='text'
+            placeholder='Add coordinates in style lat,lng'
+            id='addcoord'
+            name='coord'
+            )
+        input(
+            type='submit'
+            value='Submit'
+        )
     #map
     #leg_title
         span#leg_items Map Legend
@@ -20,6 +31,10 @@ block content
                 $.getJSON('/mapjson/' + mlayer, function(data) { addLayer(data, mlayer) });
             });
         });
+
+        $.getJSON('/getmarker', function (result){
+            L.marker(Object.values(result)).addTo(map);
+        })
 
         function addLayer(layer, name) {
             var leaf_layer;
